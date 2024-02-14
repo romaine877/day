@@ -109,6 +109,7 @@ export default function Home() {
           <div className=" mx-auto">
             <Lottie animationData={heart} loop={true} />
           </div>
+          <div className="mx-auto">
 
           <button
             onClick={() =>{ 
@@ -126,6 +127,8 @@ export default function Home() {
           >
             No
           </button>
+
+          </div>
 
 
 
