@@ -106,9 +106,9 @@ export default function Home() {
           <Image
 
           quality={100}
-          className="rounded-md mx-auto"
-      src="/pic.jpg" // Path to your image
-      alt="Description of the image"
+         className="rounded-md mx-auto"
+      src="/image/pic.JPG" // Path to your image
+      alt="image"
       width={500} // Desired width
       height={300} // Desired height
     />
