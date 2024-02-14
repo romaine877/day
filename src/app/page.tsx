@@ -102,6 +102,16 @@ export default function Home() {
           <h1 className="text-4xl  text-purple-700 text-center">
             Will you be my Valentine?
           </h1>
+          <div className="h-10"></div>
+          <Image
+
+          quality={100}
+          className="rounded-md mx-auto"
+      src="/pic.jpg" // Path to your image
+      alt="Description of the image"
+      width={500} // Desired width
+      height={300} // Desired height
+    />
           <div className="mx-auto ">
             <Lottie animationData={animation} loop={true} />
 
