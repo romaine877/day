@@ -4,6 +4,7 @@ import { useState } from "react";
 import ReactPlayer from 'react-player'
 import animation from "../assets/lottie.json";
 import heart from "../assets/heart.json";
+import gift from "../assets/gift.json";
 import Lottie from "lottie-react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -89,31 +90,9 @@ export default function Home() {
     loading ? (
       showBook ? (  <div className="flex min-h-screen items-center justify-center">
 
+                <ReactPlayer url={'https://youtube.com/shorts/BEMwh-KCPOo?si=TyUqqS0Na8q5vpNE'}  />
    
-         <HTMLFlipBook style={{}}
-        // children={{}}
-        width={550}
-        height={733}
-        size="stretch"
-        minWidth={315}
-        maxWidth={1000}
-        minHeight={400}
-        maxHeight={1533}
-        maxShadowOpacity={0.5}
-        showCover={true}
-        mobileScrollSupport={true}
-        onFlip={() => { } }
-        onChangeOrientation={() => { } }
-        onChangeState={() => { } }
-        className="demo-book" startPage={0} drawShadow={false} flippingTime={100} usePortrait={false} startZIndex={0} autoSize={false} clickEventForward={false} useMouseEvents={false} swipeDistance={0} showPageCorners={false} disableFlipByClick={false}>
-       <div className="demoPage">Page 1</div>
-      <div className="demoPage">Page 2</div>
-      <div className="demoPage">Page 3</div>
-      <div className="demoPage">Page 4</div>
-      <div className="demoPage">Page 4</div>
-      <div className="demoPage">Page 4</div>
-      <div className="demoPage">Page 4</div>
-      </HTMLFlipBook>   </div>)
+          </div>)
     :(
       <main className="flex min-h-screen flex-col items-center justify-center ">
 
@@ -132,15 +111,18 @@ export default function Home() {
           </div>
 
           <button
-            onClick={() => setShowBook(true)}
-            className="px-6 py-3 text-white bg-green-600 rounded-md"
+            onClick={() =>{ 
+              setShowBook(true)
+              setPlaying(false);
+            }}
+            className="px-6 py-3 text-white bg-green-600 w-28 rounded-md"
           >
             Yes
           </button>
           <div className="h-24"></div>
           <button
             onClick={notify}
-            className="px-6 py-3 text-white bg-red-600 rounded-md"
+            className="px-6 py-3 text-white bg-red-600 w-28 rounded-md"
           >
             No
           </button>
@@ -154,19 +136,16 @@ export default function Home() {
 
       </main>)
     ) : (
-      <div className="flex min-h-screen items-center justify-center">
-        <button
-          onClick={() => {
+      <div className="flex min-h-screen items-center justify-center ">
+         <Lottie animationData={gift} width={500} height={500} loop={true} onClick={() => {
             setLoading(true);
             setPlaying(true);
 
-          }
+          }} />
+          
 
-          }
-          className="px-6 py-3 text-white bg-blue-600 rounded-md"
-        >
-          Load Content
-        </button>
+          
+       
       </div>
     )
   );
