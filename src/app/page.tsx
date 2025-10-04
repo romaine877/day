@@ -5,8 +5,12 @@ import dynamic from 'next/dynamic'
 import animation from "../assets/lottie.json";
 import heart from "../assets/heart.json";
 import gift from "../assets/gift.json";
-import Lottie from "lottie-react";
-import { ToastContainer, toast } from 'react-toastify';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+import { toast } from 'react-toastify';
+const ToastContainer = dynamic(
+  () => import('react-toastify').then((m) => m.ToastContainer),
+  { ssr: false }
+);
 import 'react-toastify/dist/ReactToastify.css';
 
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
