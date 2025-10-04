@@ -1,14 +1,15 @@
 'use client'
 import Image from "next/image";
 import { useState } from "react";
-import ReactPlayer from 'react-player'
+import dynamic from 'next/dynamic'
 import animation from "../assets/lottie.json";
 import heart from "../assets/heart.json";
 import gift from "../assets/gift.json";
 import Lottie from "lottie-react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import HTMLFlipBook from "react-pageflip";
+
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 
 export default function Home() {
@@ -142,7 +143,7 @@ export default function Home() {
 
 
 
-          <ReactPlayer url={'damage.mp3'} loop playing={playing} onReady={() => console.log('ready')} />
+          <ReactPlayer url={'/damage.mp3'} loop playing={playing} onReady={() => console.log('ready')} />
         </div>
 
 
